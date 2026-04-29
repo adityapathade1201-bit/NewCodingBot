@@ -1,0 +1,482 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyPgJt5xxW2erM81wwAhXAx8",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/adityapathade1201-bit/NewCodingBot/blob/main/Python%20Codes\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "hjydWp1tR369",
+        "outputId": "62660153-4892-43ba-a0fc-e6141e9eb36d"
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Average Marks: 41.2\n"
+          ]
+        }
+      ],
+      "source": [
+        "import numpy as np\n",
+        "\n",
+        "marks = np.array([45, 39, 43, 44, 35])\n",
+        "\n",
+        "average = np.mean (marks)\n",
+        "\n",
+        "print(\"Average Marks:\", average)"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "import numpy as np\n",
+        "\n",
+        "temp = np.array([36, 38, 32, 31, 33, 38]) #solapur temp last 6 days\n",
+        "\n",
+        "print(\"Maximum Temperature:\", np.max(temp))\n",
+        "\n",
+        "print(\"Minimum Temperature:\", np.min(temp))\n",
+        "\n",
+        "print(\"Average Temperature:\", np.mean(temp))"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "FbO2aHlAUvrb",
+        "outputId": "4f202c0c-47b1-4515-eea3-877f48d3ff92"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Maximum Temperature: 38\n",
+            "Minimum Temperature: 31\n",
+            "Average Temperature: 34.666666666666664\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "import numpy as np\n",
+        "\n",
+        "arr = np.array([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12])\n",
+        "\n",
+        "newarr = arr.reshape(4, 3)\n",
+        "\n",
+        "print(newarr)\n"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "GEaEb8i02reS",
+        "outputId": "0508b936-0b4c-420d-d95e-76e7630ed0f7"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "[[ 1  2  3]\n",
+            " [ 4  5  6]\n",
+            " [ 7  8  9]\n",
+            " [10 11 12]]\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "import numpy as np\n",
+        "\n",
+        "# Adding prompts to make input clearer\n",
+        "try:\n",
+        "    print(\"Enter rows and columns (e.g., 2 3):\")\n",
+        "    line1 = input()\n",
+        "    rows, cols = map(int, line1.split())\n",
+        "\n",
+        "    elements = []\n",
+        "    print(f\"Enter the {rows * cols} elements (space-separated):\")\n",
+        "    line2 = input()\n",
+        "    elements = list(map(int, line2.split()))\n",
+        "\n",
+        "    if len(elements) != rows * cols:\n",
+        "        print(f\"Error: Expected {rows * cols} elements, but got {len(elements)}.\")\n",
+        "    else:\n",
+        "        array = np.array(elements).reshape(rows, cols)\n",
+        "        print(\"\\nGenerated Array:\")\n",
+        "        print(array)\n",
+        "        print(\"Dimensions:\", array.ndim)\n",
+        "        print(\"Shape:\", array.shape)\n",
+        "        print(\"Size:\", array.size)\n",
+        "except ValueError as e:\n",
+        "    print(\"Input Error: Please ensure you enter the correct number of integers.\")\n",
+        "    print(\"Details:\", e)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "HYAvFIzQ_iqz",
+        "outputId": "8c9b250e-56cf-42e9-bb64-c40d5c9953ef"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Enter rows and columns (e.g., 2 3):\n",
+            "2 3 \n",
+            "Enter the 6 elements (space-separated):\n",
+            "1 2 3 4 5 6 \n",
+            "\n",
+            "Generated Array:\n",
+            "[[1 2 3]\n",
+            " [4 5 6]]\n",
+            "Dimensions: 2\n",
+            "Shape: (2, 3)\n",
+            "Size: 6\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "import numpy as np\n",
+        "\n",
+        "# Taking input for rows and columns\n",
+        "rows, cols = map(int, input().split())\n",
+        "\n",
+        "# Example usage (optional)\n",
+        "print(\"Rows:\", rows)\n",
+        "print(\"Columns:\", cols)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "ryb67QrlB_dL",
+        "outputId": "8c16e61b-d99e-432d-e0ef-81362a5e2e5d"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "2 3 \n",
+            "Rows: 2\n",
+            "Columns: 3\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "import numpy as np\n",
+        "\n",
+        "# Input matrices\n",
+        "print(\"Enter Matrix A (3x3):\")\n",
+        "matrix_a = np.array([list(map(int, input().split())) for i in range(3)])\n",
+        "\n",
+        "print(\"Enter Matrix B (3x3):\")\n",
+        "matrix_b = np.array([list(map(int, input().split())) for i in range(3)])\n",
+        "\n",
+        "# Addition\n",
+        "madd = matrix_a + matrix_b\n",
+        "print(\"\\nAddition (A + B):\")\n",
+        "print(madd)\n",
+        "\n",
+        "# Subtraction\n",
+        "msub = matrix_a - matrix_b\n",
+        "print(\"\\nSubtraction (A - B):\")\n",
+        "print(msub)\n",
+        "\n",
+        "# Multiplication (element-wise)\n",
+        "mmul = matrix_a * matrix_b\n",
+        "print(\"\\nElement-wise Multiplication (A * B):\")\n",
+        "print(mmul)\n",
+        "\n",
+        "# Division (element-wise)\n",
+        "# Note: This will result in an error or 'inf' if any element in Matrix B is 0.\n",
+        "mdiv = matrix_a / matrix_b\n",
+        "print(\"\\nElement-wise Division (A / B):\")\n",
+        "print(mdiv)\n"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "bk3OlJxrIahV",
+        "outputId": "b999fd42-8611-40e2-a65e-1fabc960fc85"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Enter Matrix A (3x3):\n",
+            "1 2 3 \n",
+            "4 5 6 \n",
+            "7 8 9 \n",
+            "Enter Matrix B (3x3):\n",
+            "7 8 9 \n",
+            "4 5 6 \n",
+            "1 2 3 \n",
+            "\n",
+            "Addition (A + B):\n",
+            "[[ 8 10 12]\n",
+            " [ 8 10 12]\n",
+            " [ 8 10 12]]\n",
+            "\n",
+            "Subtraction (A - B):\n",
+            "[[-6 -6 -6]\n",
+            " [ 0  0  0]\n",
+            " [ 6  6  6]]\n",
+            "\n",
+            "Element-wise Multiplication (A * B):\n",
+            "[[ 7 16 27]\n",
+            " [16 25 36]\n",
+            " [ 7 16 27]]\n",
+            "\n",
+            "Element-wise Division (A / B):\n",
+            "[[0.14285714 0.25       0.33333333]\n",
+            " [1.         1.         1.        ]\n",
+            " [7.         4.         3.        ]]\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "import numpy as np\n",
+        "\n",
+        "def get_3x3_array(name):\n",
+        "    print(f\"Enter the elements for {name} (3 rows, 3 space-separated integers per row):\")\n",
+        "    elements = []\n",
+        "    for i in range(3):\n",
+        "        row = list(map(int, input().split()))\n",
+        "        elements.append(row)\n",
+        "    return np.array(elements)\n",
+        "\n",
+        "# 1. Input Format: Prompt user for two 3x3 arrays\n",
+        "arr1 = get_3x3_array(\"Array 1\")\n",
+        "arr2 = get_3x3_array(\"Array 2\")\n",
+        "\n",
+        "# 2. Perform Stacking Operations\n",
+        "# Horizontal Stacking: Side-by-side\n",
+        "h_stack = np.hstack((arr1, arr2))\n",
+        "\n",
+        "# Vertical Stacking: One below the other\n",
+        "v_stack = np.vstack((arr1, arr2))\n",
+        "\n",
+        "# 3. Output Format: Display results\n",
+        "print(\"\\nHorizontal Stack (side-by-side):\")\n",
+        "print(h_stack)\n",
+        "\n",
+        "print(\"\\nVertical Stack (one below the other):\")\n",
+        "print(v_stack)\n"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "SSKBvTVKLf2n",
+        "outputId": "55c5b0fd-fe98-4d2c-a3f4-7ed9559aa5d1"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Enter the elements for Array 1 (3 rows, 3 space-separated integers per row):\n",
+            "1 2 3 \n",
+            "4 5 6 \n",
+            "7 8 9 \n",
+            "Enter the elements for Array 2 (3 rows, 3 space-separated integers per row):\n",
+            "9 8 7 \n",
+            "6 5 4 \n",
+            "3 2 1 \n",
+            "\n",
+            "Horizontal Stack (side-by-side):\n",
+            "[[1 2 3 9 8 7]\n",
+            " [4 5 6 6 5 4]\n",
+            " [7 8 9 3 2 1]]\n",
+            "\n",
+            "Vertical Stack (one below the other):\n",
+            "[[1 2 3]\n",
+            " [4 5 6]\n",
+            " [7 8 9]\n",
+            " [9 8 7]\n",
+            " [6 5 4]\n",
+            " [3 2 1]]\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "import numpy as np\n",
+        "\n",
+        "# Take user input for the start, stop, and step of the sequence\n",
+        "start = int(input(\"Enter start: \"))\n",
+        "stop = int(input(\"Enter stop: \"))\n",
+        "step = int(input(\"Enter step: \"))\n",
+        "\n",
+        "# Generate the sequence using np.arange()\n",
+        "a = np.arange(start, stop, step)\n",
+        "\n",
+        "print(a)\n",
+        "# Print the generated sequence\n"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "u6a023Suwnbk",
+        "outputId": "6e9091fc-98d8-468b-cf84-597b2c3267cc"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Enter start: 2 \n",
+            "Enter stop: 10\n",
+            "Enter step: 2\n",
+            "[2 4 6 8]\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "import numpy as np\n",
+        "\n",
+        "def array_operations(A, B):\n",
+        "    # Convert A and B to Numpy arrays\n",
+        "    A = np.array(A)\n",
+        "    B = np.array(B)\n",
+        "\n",
+        "    # Arithmetic Operations\n",
+        "    sum_result = A + B\n",
+        "    diff_result = A - B\n",
+        "    prod_result = A * B\n",
+        "\n",
+        "    # Statistical Operations\n",
+        "    mean_A = np.mean(A)\n",
+        "    median_A = np.median(A)\n",
+        "    std_dev_A = np.std(A)\n",
+        "\n",
+        "    # Bitwise Operations\n",
+        "    and_result = A & B\n",
+        "    or_result = A | B\n",
+        "    xor_result = A ^ B\n",
+        "\n",
+        "    return {\n",
+        "        \"arithmetic\": (sum_result, diff_result, prod_result),\n",
+        "        \"stats\": (mean_A, median_A, std_dev_A),\n",
+        "        \"bitwise\": (and_result, or_result, xor_result)\n",
+        "    }\n",
+        "\n"
+      ],
+      "metadata": {
+        "id": "QDSUlEKJ9ilR"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "import numpy as np\n",
+        "\n",
+        "# Original array\n",
+        "inputList = list(map(int, input().split(\" \")))\n",
+        "original_array = np.array(inputList)\n",
+        "\n",
+        "# Create a view\n",
+        "view_array = original_array.view()\n",
+        "\n",
+        "# Create a copy\n",
+        "copy_array = original_array.copy()\n",
+        "\n",
+        "# Modify the view\n",
+        "view_array[0] = 99\n",
+        "print(\"Original array after modifying view:\", original_array)\n",
+        "print(\"View array:\", view_array)\n",
+        "\n",
+        "# Modify the copy\n",
+        "copy_array[1] = 88\n",
+        "print(\"Original array after modifying copy:\", original_array)\n",
+        "print(\"Copy array:\", copy_array)\n"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "-uvHQLbJBVP9",
+        "outputId": "0f502ab1-48d2-4f59-ad72-05a5cc398d51"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "10 20 30 40 50\n",
+            "Original array after modifying view: [99 20 30 40 50]\n",
+            "View array: [99 20 30 40 50]\n",
+            "Original array after modifying copy: [99 20 30 40 50]\n",
+            "Copy array: [10 88 30 40 50]\n"
+          ]
+        }
+      ]
+    }
+  ]
+}
